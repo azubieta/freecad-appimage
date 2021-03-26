@@ -10,9 +10,9 @@ AppDir:
     id: org.freecad.freecad
     name: python appimage hello world
     icon: freecad
-    version: 0.1.0
+    version: latest
     exec: usr/lib/freecad/bin/freecad-python3
-    # Set the application main script path as argument. Use '$@' to forward CLI parameters
+    # Use '$@' to forward CLI parameters
     exec_args: "$@"
 
   apt:
@@ -26,6 +26,7 @@ AppDir:
 
     include:
       - freecad
+      - opencascade
       - coreutils
       - python3-pyqt5
     exclude: []

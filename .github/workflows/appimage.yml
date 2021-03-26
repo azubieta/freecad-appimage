@@ -1,0 +1,31 @@
+name: C/C++ AppImage
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build-appimage:
+
+    runs-on: ubuntu-20.04
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build AppImage
+        uses: docker://appimagecrafters/appimage-builder:0.8.2
+        with:
+          args: --recipe ./freecad-appimage-amd64.yml --skip-test
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: AppImage
+          path: './*.AppImage*'
+
+      - uses: "marvinpinto/action-automatic-releases@latest"
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          prerelease: true
+          automatic_release_tag: Continuous
+          files: './*.AppImage*'
