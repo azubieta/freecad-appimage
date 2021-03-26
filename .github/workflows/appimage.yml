@@ -12,9 +12,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Build AppImage
-        uses: docker://appimagecrafters/appimage-builder:0.8.2
+        uses: docker://appimagecrafters/appimage-builder:0.8.7
         with:
-          args: --recipe ./freecad-appimage-amd64.yml --skip-test
+          args: appimage-builder --recipe ./freecad-appimage-amd64.yml --skip-test
 
       - uses: actions/upload-artifact@v2
         with:
