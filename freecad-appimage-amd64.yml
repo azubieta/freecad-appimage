@@ -26,7 +26,6 @@ AppDir:
 
     include:
       - freecad
-      - opencascade
       - coreutils
       - python3-pyqt5
     exclude: []
