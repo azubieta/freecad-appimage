@@ -7,8 +7,8 @@ AppDir:
   path: ./AppDir
 
   app_info:
-    id: org.freecad.freecad
-    name: python appimage hello world
+    id: freecad
+    name: FreeCAD
     icon: freecad
     version: latest
     exec: usr/lib/freecad/bin/freecad-python3
